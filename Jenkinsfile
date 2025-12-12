@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     tools {
-        jdk 'jdk11'     // Name in Jenkins Global Tools
-        maven 'maven3'  // Name in Jenkins Global Tools
+        jdk 'jdk11'     
+        maven 'maven3'  
     }
 
     stages {
 
         stage('Checkout Code') {
             steps {
-                // Correct way to use credentialsId
+                
                 git branch: 'main',
                     url: 'https://github.com/AbdallahSWDev/jenkins.git',
                     credentialsId: 'github-cred'
