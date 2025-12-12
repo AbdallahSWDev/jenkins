@@ -10,9 +10,10 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
+                // Correct way to use credentialsId
                 git branch: 'main',
-                    url: 'https://github.com/AbdallahSWDev/jenkins.git'
-                 credentialsId: 'github-cred'
+                    url: 'https://github.com/AbdallahSWDev/jenkins.git',
+                    credentialsId: 'github-cred'
             }
         }
 
